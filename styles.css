@@ -53,6 +53,18 @@ main {
     color: #0078d4;
     text-align: center;
     font-weight: 600;
+    position: relative;
+    display: inline-block;
+}
+
+.references h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #ff6f61; /* Warm orange accent */
+    margin: 10px auto 0;
+    border-radius: 2px;
 }
 
 .references ul {
@@ -67,11 +79,13 @@ main {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid #0078d4; /* Blue accent border */
 }
 
 .references ul li:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    border-left-color: #ff6f61; /* Orange accent on hover */
 }
 
 .references ul li a {
@@ -108,19 +122,20 @@ footer a:hover {
 }
 
 /* Additional Color Accents */
-.references h2 {
-    position: relative;
-    display: inline-block;
+.references ul li:nth-child(odd) {
+    border-left-color: #6b5b95; /* Purple accent for odd items */
 }
 
-.references h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background: #ff6f61; /* Warm orange accent */
-    margin: 10px auto 0;
-    border-radius: 2px;
+.references ul li:nth-child(even) {
+    border-left-color: #88b04b; /* Green accent for even items */
+}
+
+.references ul li:nth-child(odd):hover {
+    border-left-color: #ff6f61; /* Orange accent on hover for odd items */
+}
+
+.references ul li:nth-child(even):hover {
+    border-left-color: #ff6f61; /* Orange accent on hover for even items */
 }
 
 /* Responsive Design */
